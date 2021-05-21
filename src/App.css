@@ -1,6 +1,12 @@
 * {
 
 }
+/* .updown {
+    border-left: 6px solid black;
+    height: 500px;
+    position:absolute;
+    left: 50%;
+} */
 
 .login{
   display: flex;
@@ -17,6 +23,6 @@
 }
 
 .noticeboard{
-
+  display: flex;
   justify-content: center;
 }

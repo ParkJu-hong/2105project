@@ -1,21 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Sidebar from './Sidebar'
 import LandingPage from './components/LandingPage'
 
 
+
 function App() {
+  const [mode, setMode] = useState('home');
+
   return (
     <>
-    <BrowserRouter>
-    {/* <Sidebar/> */}
-    <Switch>
-      <Route exact path='/'><LandingPage noticeboard='home'/></Route>
-      <Route path='/meditation'><LandingPage noticeboard='meditation'/></Route>
-      <Route path='/'><LandingPage noticeboard='workout'/></Route>
-    </Switch>
-    </BrowserRouter>
+    <LandingPage onChangeMode={function(_mode){
+      setMode(_mode);
+    }.bind(this)}/>
     </>
   );
 }
